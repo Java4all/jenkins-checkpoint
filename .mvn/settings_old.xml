@@ -1,0 +1,41 @@
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd">
+  <mirrors>
+    <mirror>
+      <id>jenkins-mirror</id>
+      <mirrorOf>central</mirrorOf>
+      <url>https://repo.jenkins-ci.org/public/</url>
+    </mirror>
+  </mirrors>
+
+   <pluginGroups>
+    <pluginGroup>org.jenkins-ci.tools</pluginGroup>
+    <pluginGroup>org.jenkins-ci.plugins</pluginGroup>
+  </pluginGroups>
+
+  <profiles>
+    <profile>
+      <id>default2</id>
+      <repositories>
+        <repository>
+          <id>jenkins</id>
+          <url>https://repo.jenkins-ci.org/public/</url>
+        </repository>
+        <repository>
+           <id>jenkins-ci-releases</id>
+           <url>https://repo.jenkins-ci.org/releases/</url>
+       </repository>
+      </repositories>
+      <pluginRepositories>
+        <pluginRepository>
+          <id>maven-plugins-only</id>
+          <url>https://repo.maven.apache.org/maven2</url>
+        </pluginRepository>
+      </pluginRepositories>
+    </profile>
+  </profiles>
+  <activeProfiles>
+    <activeProfile>default2</activeProfile>
+  </activeProfiles>
+</settings>
