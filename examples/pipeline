@@ -1,0 +1,25 @@
+pipeline {
+  agent any
+
+  stages {
+    stage('Build') {
+      steps {
+        echo "Doing build step..."
+        checkpoint("after-build")
+      }
+    }
+
+    stage('Test') {
+      steps {
+        echo "Running tests..."
+        error("Simulated failure after checkpoint")
+      }
+    }
+
+    stage('Deploy') {
+      steps {
+        echo "Deploying..."
+      }
+    }
+  }
+}
